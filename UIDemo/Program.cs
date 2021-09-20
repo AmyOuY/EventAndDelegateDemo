@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http.Headers;
+using System.Threading;
 
 namespace UIDemo
 {
@@ -22,7 +23,20 @@ namespace UIDemo
 
             productPurchaser.Purchase(product);
 
+
+            Thread.Sleep(5000);
+
+            DemoClass demo = new DemoClass();
+            demo.Testing(CallBack);
+
+
             Console.ReadLine();
+        }
+
+
+        static void CallBack(int i)
+        {
+            Console.WriteLine(i);
         }
     }
 }
